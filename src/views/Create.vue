@@ -20,12 +20,11 @@
       const user = computed(() => store.user)
 
       // Redirect to Login page if user is not logged in
-
-      watchEffect(() => {
-        if (!user.value) {
-          router.push({ name: 'Login' })
-        }
-      })
+      // watchEffect(() => {
+      //   if (!user.value) {
+      //     router.push({ name: 'Login' })
+      //   }
+      // })
 
       // Create data
 
@@ -126,7 +125,7 @@
 </script>
 
 <template>
-  <div v-if="user" class="max-w-screen-md px-5 py-10 mx-auto">
+  <div class="max-w-screen-md px-5 py-10 mx-auto">
     <div v-if="statusMsg || errorMsg" class="p-4 mb-10 rounded-md bg-light-grey">
       <p class="text-red-500">{{ errorMsg }}</p>
       <p class="text-at-light-green">{{ statusMsg }}</p>

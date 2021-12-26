@@ -80,7 +80,6 @@
       }
 
       // Delete exercise
-
       const deleteExercise = (id) => {
         if (data.value.exercises.length > 1) {
           data.value.exercises = data.value.exercises.filter(
@@ -146,7 +145,7 @@
   <div class="flex content-center justify-center" v-if="isLoading">
     <h1 class="text-center">Loading...</h1>
   </div>
-  <div v-else class="px-4">
+  <div v-else class="px-4 mb-12">
     <div
       v-if="statusMsg || errorMsg"
       class="p-4 mb-10 rounded-md bg-light-grey max-w-2xl mx-auto mt-12"

@@ -37,10 +37,10 @@
         return
       }
 
-      // If  user redirect to prifile page
+      // If  user redirect to home page
       watchEffect(() => {
         if (user.value) {
-          router.push({ name: 'Profile' })
+          router.push({ name: 'Home' })
         }
       })
 
