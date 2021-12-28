@@ -1,8 +1,7 @@
 <script>
-  import { ref, computed, watchEffect, onMounted } from 'vue'
+  import { ref, computed, watchEffect } from 'vue'
   import { supabase } from '../supabase/index'
   import { useRouter } from 'vue-router'
-  // import store from '../store/useAuth'
   import { useUser } from '../store/useUser'
   import EyeIcon from 'vue-material-design-icons/Eye.vue'
   import EyeoffIcon from 'vue-material-design-icons/Eyeoff.vue'
@@ -104,7 +103,7 @@
         <div class="relative">
           <input
             v-model="password"
-            class="p-2 text-gray-500 focus:outline-none w-full"
+            class="w-full p-2 text-gray-500 focus:outline-none"
             :type="passwordType"
             required
             id="password"
@@ -115,21 +114,7 @@
           </button>
         </div>
       </div>
-      <button
-        class="
-          self-start
-          px-5
-          py-3
-          mt-5
-          text-gray-200
-          rounded
-          bg-at-light-green
-          hover:bg-indigo-700
-        "
-        type="submit"
-      >
-        Login
-      </button>
+      <button class="self-start px-5 mt-4 btn btn-primary" type="submit">Login</button>
       <router-link :to="{ name: 'Register' }" class="mt-6 text-sm text-center">
         Don't have an account? <span class="text-at-light-green">Register</span>
       </router-link>

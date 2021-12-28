@@ -179,21 +179,7 @@
           :addExercise="addExercise"
           :deleteExercise="deleteExercise"
         />
-        <button
-          class="
-            self-start
-            px-5
-            py-3
-            mt-5
-            text-gray-200
-            rounded
-            bg-at-light-green
-            hover:bg-indigo-700
-          "
-          type="submit"
-        >
-          Record Workout
-        </button>
+        <button class="self-start btn btn-primary" type="submit">Record Workout</button>
       </form>
     </div>
   </div>

@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+}
+
+@layer utilities {
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[#44BA9F] hover:text-[#44BA9F] text-gray-100 text-[16px] hover:bg-light-grey hover:border hover:border-[#44BA9F];
+  }
+}

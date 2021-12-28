@@ -43,20 +43,7 @@
           id="confirm password"
         />
       </div>
-      <button
-        @click="register"
-        class="
-          self-start
-          px-5
-          py-3
-          mt-5
-          text-gray-200
-          rounded
-          bg-at-light-green
-          hover:bg-indigo-700
-        "
-        type="submit"
-      >
+      <button @click="register" class="self-start mt-4 btn btn-primary" type="submit">
         Register
       </button>
       <router-link :to="{ name: 'Login' }" class="mt-6 text-sm text-center">

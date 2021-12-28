@@ -148,59 +148,47 @@
   <div v-else class="px-4 mb-12">
     <div
       v-if="statusMsg || errorMsg"
-      class="p-4 mb-10 rounded-md bg-light-grey max-w-2xl mx-auto mt-12"
+      class="max-w-2xl p-4 mx-auto mt-12 mb-10 rounded-md bg-light-grey"
     >
       <p class="text-red-500">{{ errorMsg }}</p>
       <p class="text-at-light-green">{{ statusMsg }}</p>
     </div>
     <div
-      class="
-        relative
-        max-w-2xl
-        mx-auto
-        flex flex-col
-        items-center
-        mt-12
-        bg-light-grey
-        shadow-md
-        rounded-md
-        p-8
-        text-center
-      "
+      class="relative flex flex-col items-center max-w-2xl p-8 mx-auto mt-12 text-center rounded-md shadow-md  bg-light-grey"
     >
       <img
         v-if="data.workoutType === 'cardio'"
-        class="h-24 w-auto"
+        class="w-auto h-24"
         src="../assets/images/running-light-green.png"
         alt="Runner"
       />
       <img
         v-else
-        class="h-24 w-auto"
+        class="w-auto h-24"
         src="../assets/images/dumbbell-light-green.png"
         alt="Dumbell"
       />
 
-      <p class="bg-at-light-green py-2 px-4 rounded-md text-gray-100 my-5">
+      <p class="px-4 py-2 my-5 text-gray-100 rounded-md bg-at-light-green">
         {{ data.workoutType }}
       </p>
       <div class="w-full" v-if="edit">
         <input
-          class="p-3 focus:outline-none rounded-md w-full"
+          class="w-full p-3 rounded-md focus:outline-none"
           v-model="data.workoutName"
           type="text"
         />
       </div>
 
-      <h1 v-else class="text-at-light-green text-3xl first-letter:capitalize">
+      <h1 v-else class="text-3xl text-at-light-green first-letter:capitalize">
         {{ data.workoutName }}
       </h1>
 
-      <div v-if="user" class="flex items-center absolute left-5 top-5 gap-x-4">
+      <div v-if="user" class="absolute flex items-center left-5 top-5 gap-x-4">
         <button
           @click="editMode"
           type="button"
-          class="w-7 h-7 flex justify-center items-center bg-at-light-green rounded-full"
+          class="flex items-center justify-center rounded-full w-7 h-7 bg-at-light-green"
         >
           <img
             class="w-auto h-3.5"
@@ -212,14 +200,14 @@
         <button
           @click="deleteWorkOut"
           type="button"
-          class="w-7 h-7 flex justify-center items-center bg-at-light-green rounded-full"
+          class="flex items-center justify-center rounded-full w-7 h-7 bg-at-light-green"
         >
           <img class="w-auto h-3.5" src="../assets/images/trash-light.png" alt="Trash" />
         </button>
       </div>
     </div>
     <!-- Workout card -->
-    <div class="relative max-w-2xl mx-auto mt-20 bg-light-grey shadow-md rounded-md p-5">
+    <div class="relative max-w-2xl p-5 mx-auto mt-20 rounded-md shadow-md bg-light-grey">
       <div v-if="data.workoutType === 'cardio'">
         <div v-if="edit">
           <CardioInput
@@ -232,7 +220,7 @@
         <!-- Loop through Cardio exercises -->
         <div
           v-else
-          class="grid grid-cols-4 text-center mb-5"
+          class="grid grid-cols-4 mb-5 text-center"
           v-for="exercise in data.exercises"
           :key="exercise.id"
         >
@@ -265,7 +253,7 @@
         </div>
         <!-- Loop through strength exercises -->
         <div
-          class="grid grid-cols-4 text-center mb-5"
+          class="grid grid-cols-4 mb-5 text-center"
           v-for="exercise in data.exercises"
           :key="exercise.id"
           v-else
@@ -289,21 +277,8 @@
         </div>
       </div>
     </div>
-    <div v-if="edit" class="max-w-2xl mx-auto pt-5">
-      <button
-        @click="updateWorkOut"
-        class="
-          self-start
-          px-5
-          py-3
-          mt-5
-          text-gray-200
-          rounded
-          bg-at-light-green
-          hover:bg-indigo-700
-        "
-        type="submit"
-      >
+    <div v-if="edit" class="max-w-2xl pt-5 mx-auto">
+      <button @click="updateWorkOut" class="self-start btn btn-primary" type="submit">
         Update Workout
       </button>
     </div>
